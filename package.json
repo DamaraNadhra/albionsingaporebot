@@ -21,6 +21,7 @@
   "homepage": "https://github.com/DamaraNadhra/albionsingaporebot#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "discord-rpc": "^4.0.1",
     "discord.js": "^13.0.1",
     "mongoose": "^5.13.5",
     "sentiment": "^5.0.2"
