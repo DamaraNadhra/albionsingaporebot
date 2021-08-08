@@ -688,7 +688,7 @@ const positiveResponses = [
 const errorSelectMenus = new MessageActionRow().addComponents(
   new MessageSelectMenu()
     .setPlaceholder("Search docs")
-    .setCustomId("docs")
+    .setCustomId("document")
     .addOptions([
       {
         label: "ZvZ Definition",

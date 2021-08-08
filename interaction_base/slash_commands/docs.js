@@ -72,7 +72,7 @@ module.exports = {
           components: [errorSelectMenus],
         })
         .then((msg) => {
-          const filter = (interaction) => interaction.customId === "docs";
+          const filter = (interaction) => interaction.customId === "document";
           interaction.channel
             .awaitMessageComponent({ filter, time: 60000 })
             .then((reaction) => {
