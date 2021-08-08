@@ -13,7 +13,7 @@ module.exports = {
    *
    * @param {Client} client
    */
-  execute(interaction, client) {
+  async execute(interaction, client) {
     let question = interaction.options.getString("query");
     let target = interaction.options.getUser("target");
     let answer = Object.keys(faq).find((m) =>
