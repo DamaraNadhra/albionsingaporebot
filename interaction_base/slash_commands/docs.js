@@ -20,31 +20,31 @@ module.exports = {
       m.toLowerCase().includes(question.toLowerCase())
     );
     switch (answer) {
-      case whatIsZvz:
+      case "whatIsZvz":
         title = "What is ZvZ?";
         break;
-      case whatIsCaravan:
+      case "whatIsCaravan":
         title = "What is Caravan?";
         break;
-      case howToJoinCaravan:
+      case "howToJoinCaravan":
         title = "How do I join Caravan?";
         break;
-      case caravanGears:
+      case "caravanGears":
         title = "What gear should I wear in Caravan?";
         break;
-      case howToGetIntoR3OrWwp:
+      case "howToGetIntoR3OrWwp":
         title = "How do I get into R3 or WWP?";
         break;
-      case whichIsBetterR3OrWwp:
+      case "whichIsBetterR3OrWwp":
         title = "Which one is better? R3 or WWP?";
         break;
-      case howToGetIntoR3OrWwp:
+      case "howToGetIntoR3OrWwp":
         title = "How do I get into R3 or WWP?";
         break;
-      case commonlyUsedAcronyms:
+      case "commonlyUsedAcronyms":
         title = "Commony Used Acronyms (and terms):";
         break;
-      case whatIsAvalonianRaidDungeon:
+      case "whatIsAvalonianRaidDungeon":
         title = "What is Avalonian Dungeon?";
         break;
       default:
