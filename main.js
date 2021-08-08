@@ -616,7 +616,7 @@ client.on("interactionCreate", async (interaction) => {
   } else if (interaction.isCommand()) {
     if (!client.interactionCommand.get(interaction.commandName)) return;
     try {
-      await client.interactionCommand
+      client.interactionCommand
         .get(interaction.commandName)
         .execute(interaction, client);
     } catch (error) {
