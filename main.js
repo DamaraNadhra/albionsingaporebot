@@ -602,8 +602,9 @@ client.on("interactionCreate", async (interaction) => {
       });
     }
   } else if (interaction.isSelectMenu()) {
+    if (!client.interactionCommand.get(interaction.customId)) return;
     try {
-      await client.interactionCommand
+      client.interactionCommand
         .get(interaction.customId)
         .execute(interaction, client);
     } catch (error) {
