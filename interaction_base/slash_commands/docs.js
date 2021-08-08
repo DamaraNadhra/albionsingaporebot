@@ -45,7 +45,7 @@ module.exports = {
         break;
     }
     if (answer !== undefined && answer !== "approvedScout") {
-      interaction.reply({
+      await interaction.reply({
         content: `_Showing answer for <@${
           target ? target.id : interaction.user.id
         }>_ \n<:singaporeDiscordEmoji:873354185645625414> __**${title}**__ \n${
