@@ -1,0 +1,28 @@
+{
+  "name": "albionsingaporebot",
+  "version": "1.0.0",
+  "description": "A very cool application ngl",
+  "main": "main.js",
+  "engines": {
+    "node": "16.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamaraNadhra/albionsingaporebot.git"
+  },
+  "author": "gato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamaraNadhra/albionsingaporebot/issues"
+  },
+  "homepage": "https://github.com/DamaraNadhra/albionsingaporebot#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^13.0.1",
+    "mongoose": "^5.13.5",
+    "sentiment": "^5.0.2"
+  }
+}
