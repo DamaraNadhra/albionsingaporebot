@@ -1,5 +1,5 @@
 const rep = require("../models/reputation");
-const { nicknameMaker } = require("../functions");
+const { nicknameMaker } = require("../util");
 module.exports = {
   name: "rep",
   description: "check someone's reputation!",

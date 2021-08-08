@@ -23,7 +23,7 @@ const prefix = "!";
 const blacklist = require("./models/blacklist");
 const database = require("mongoose");
 const rep = require("./models/reputation");
-const { dateMaker, nicknameMaker, getDate } = require("./functions");
+const { dateMaker, nicknameMaker, getDate } = require("./util");
 let { recentlyRan } = require("./cooldown");
 let repLogButton = new MessageButton()
   .setStyle("LINK")

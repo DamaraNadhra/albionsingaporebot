@@ -1,5 +1,5 @@
 const rep = require("../models/reputation");
-const { nicknameMaker, dateMaker } = require("../functions");
+const { nicknameMaker, dateMaker } = require("../util");
 let { recentlyRan } = require("../cooldown");
 const { MessageButton, MessageEmbed, MessageActionRow } = require("discord.js");
 let repLogButton = new MessageButton()

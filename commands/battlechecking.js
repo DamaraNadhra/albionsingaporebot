@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const { compareSet, sets } = require("../functions");
+const { compareSet, sets } = require("../util");
 const axios = require("axios");
 module.exports = {
   name: "battlechecking",

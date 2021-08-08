@@ -1,5 +1,5 @@
 const { Message } = require("discord.js");
-const { dateMaker } = require("../functions");
+const { dateMaker } = require("../util");
 const blacklist = require("../models/blacklist");
 module.exports = {
   name: "blacklist",

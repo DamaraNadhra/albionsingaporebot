@@ -1,4 +1,4 @@
-const { dateMaker, nicknameMaker } = require("../../functions");
+const { dateMaker, nicknameMaker } = require("../../util");
 module.exports = {
   name: "giverep",
   description: "gives reputation to the specified user.",
