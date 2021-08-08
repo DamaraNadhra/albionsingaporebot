@@ -7,7 +7,7 @@ A very cool configuration bot to help Albion Singapore guild discord server to d
 
 #### Check blacklist
 
-```http
+```
   !checkbl ${option}
 ```
 
@@ -17,10 +17,10 @@ A very cool configuration bot to help Albion Singapore guild discord server to d
 
 #### Reputation
 
-```http
+```
   !rep ${person}
 ```
-```http
+```
   !giverep [User(s)]
 ```
 | Parameter | Type     | Description                       |
