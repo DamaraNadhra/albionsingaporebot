@@ -1,6 +1,7 @@
 const { Message, Client, MessageButton } = require("discord.js");
-const { zvzlist } = require("../list");
+const { zvzlist, avalist } = require("../list");
 var zvzChoices = [];
+var avaChoices = [];
 Object.keys(zvzlist).forEach((thing, index) => {
   Object.keys(zvzlist[thing]).forEach((m, i) => {
     var object = {};
@@ -8,6 +9,12 @@ Object.keys(zvzlist).forEach((thing, index) => {
     object["value"] = m;
     zvzChoices.push(object);
   });
+});
+Object.keys(avalist).forEach((m, i) => {
+  var object = {};
+  object["name"] = avalist[m].name;
+  object["value"] = m;
+  avaChoices.push(object);
 });
 
 module.exports = {
@@ -174,7 +181,7 @@ module.exports = {
               description: "the specified build that you want to see.",
               type: "STRING",
               required: false,
-              choices,
+              choices: avaChoices,
             },
           ],
         },
