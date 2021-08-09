@@ -296,6 +296,10 @@ client.on("messageCreate", async (message) => {
         content: `<@${message.author.id}>, ${response}`,
       });
     }
+  } else if (message.cleanContent.toLowerCase().includes("stupid bot")) {
+    message.reply(
+      "You think I'm stupid???? okay fine dont u ever use my command ever again!!"
+    );
   }
   if (!message.content.startsWith(prefix) || message.author.bot) return;
   const command = args.shift().toLowerCase();
