@@ -24,7 +24,7 @@ module.exports = {
     if (answer !== undefined && answer !== "approvedScout") {
       interaction.reply({
         content: `_Showing answer for <@${
-          reaction.user.id
+          interaction.user.id
         }>_ \n<:singaporeDiscordEmoji:873354185645625414> __**${title}**__ \n${
           Boolean(faq[answer].attachment) ? faq[answer].string : faq[answer]
         }`,
