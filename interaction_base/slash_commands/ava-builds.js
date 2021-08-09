@@ -68,6 +68,7 @@ module.exports = {
           .setLabel("Home")
           .setStyle("PRIMARY");
         interaction.reply({
+          content: "Avalonian Builds!",
           components: [
             AvArow,
             new MessageActionRow().addComponents(closeButton, homeButton),
