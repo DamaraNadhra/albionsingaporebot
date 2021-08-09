@@ -842,9 +842,7 @@ function faqTitle(param) {
       title = "What is WWP Defense?";
       break;
     default:
-      title = `Showing document#${
-        Object.keys(faq).findIndex((m) => m === answer) + 1
-      }`;
+      title = `Showing document`;
       break;
   }
   return title;
