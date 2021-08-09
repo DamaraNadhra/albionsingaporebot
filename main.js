@@ -283,7 +283,7 @@ client.on("messageCreate", async (message) => {
     var resp = sentiment.analyze(message.content.toLowerCase());
 
     console.log(resp.score);
-    if (resp.score < 0 || resp.score === 0) {
+    if (resp.score < 0) {
       const response =
         negativeResponses[Math.floor(Math.random() * negativeResponses.length)];
       message.channel.send({
