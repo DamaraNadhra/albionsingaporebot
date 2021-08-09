@@ -7,14 +7,14 @@ Object.keys(zvzlist).forEach((thing, index) => {
     var object = {};
     object["name"] = zvzlist[thing][m].label;
     object["value"] = m;
-    zvzChoices.push(object);
+    if (zvzChoices.length < 25) zvzChoices.push(object);
   });
 });
 Object.keys(avalist).forEach((m, i) => {
   var object = {};
   object["name"] = avalist[m].name;
   object["value"] = m;
-  avaChoices.push(object);
+  if (avaChoices.length < 25) avaChoices.push(object);
 });
 
 module.exports = {
