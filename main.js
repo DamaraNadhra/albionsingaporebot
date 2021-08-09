@@ -276,6 +276,25 @@ client.on("messageCreate", async (message) => {
       });
     }
   }
+  const RNG = Math.floor(Math.random() * 17);
+  if (RNG === 12 && message.content.length > 20) {
+    var resp = sentiment.analyze(message.content.toLowerCase());
+
+    console.log(resp.score);
+    if (resp.score < 0 || resp.score === 0) {
+      const response =
+        negativeResponses[Math.floor(Math.random() * negativeResponses.length)];
+      message.channel.send({
+        content: `<@${message.author.id}>, ${response}`,
+      });
+    } else {
+      const response =
+        positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
+      message.channel.send({
+        content: `<@${message.author.id}>, ${response}`,
+      });
+    }
+  }
   const command = args.shift().toLowerCase();
   const commands =
     client.commander.get(command) ||
@@ -283,7 +302,7 @@ client.on("messageCreate", async (message) => {
       (cmd) => cmd.aliases && cmd.aliases.includes(command)
     );
   //if (!message.content.startsWith(prefix)) return;
-  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
   //if (!client.commander.has(command)) return;
   if (commands && commands.permissions) {
     const authorPerms = message.channel.permissionsFor(message.author);
@@ -305,25 +324,6 @@ client.on("messageCreate", async (message) => {
   try {
     commands.execute(message, args, client);
   } catch (error) {}
-  const RNG = Math.floor(Math.random() * 17);
-  if (RNG === 12 && message.content.length > 20) {
-    var resp = sentiment.analyze(message.content.toLowerCase());
-
-    console.log(resp.score);
-    if (resp.score < 0 || resp.score === 0) {
-      const response =
-        negativeResponses[Math.floor(Math.random() * negativeResponses.length)];
-      message.channel.send({
-        content: `<@${message.author.id}>, ${response}`,
-      });
-    } else {
-      const response =
-        positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
-      message.channel.send({
-        content: `<@${message.author.id}>, ${response}`,
-      });
-    }
-  }
   if (command === "fastcheck") {
     const eventId = args[0];
     if (!eventId) return message.reply("Please state the event Id");
