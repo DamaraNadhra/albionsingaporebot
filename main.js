@@ -297,15 +297,13 @@ client.on("messageCreate", async (message) => {
       });
     }
   }
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
   const command = args.shift().toLowerCase();
   const commands =
     client.commander.get(command) ||
     client.commander.find(
       (cmd) => cmd.aliases && cmd.aliases.includes(command)
     );
-  //if (!message.content.startsWith(prefix)) return;
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
-  //if (!client.commander.has(command)) return;
   if (commands && commands.permissions) {
     const authorPerms = message.channel.permissionsFor(message.author);
     if (!authorPerms || !authorPerms.has(commands.permissions)) {
