@@ -15,7 +15,10 @@ module.exports = {
       .setLabel("Home")
       .setStyle("PRIMARY");
     interaction.update({
-      components: [AvArow, new MessageActionRow().addComponents(closeButton)],
+      components: [
+        AvArow,
+        new MessageActionRow().addComponents(closeButton, homeButton),
+      ],
     });
   },
 };

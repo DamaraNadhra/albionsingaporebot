@@ -794,7 +794,61 @@ const getDate = () => {
   }
   return `📅 ${day}, ${dateee.toUTCString().split(/ +/g)[2]} ${date}`;
 };
-function countdown(date) {}
+function faqTitle(param) {
+  switch (param) {
+    case "whatIsZvz":
+      title = "What is ZvZ?";
+      break;
+    case "whatIsCaravan":
+      title = "What is Caravan?";
+      break;
+    case "howToJoinCaravan":
+      title = "How do I join Caravan?";
+      break;
+    case "caravanGears":
+      title = "What gear should I wear in Caravan?";
+      break;
+    case "howToGetIntoR3OrWwp":
+      title = "How do I get into R3 or WWP?";
+      break;
+    case "whichIsBetterR3OrWwp":
+      title = "Which one is better? R3 or WWP?";
+      break;
+    case "howToGetIntoR3OrWwp":
+      title = "How do I get into R3 or WWP?";
+      break;
+    case "commonlyUsedAcronyms":
+      title = "Commony Used Acronyms (and terms):";
+      break;
+    case "whatIsAvalonianRaidDungeon":
+      title = "What is Avalonian Dungeon?";
+      break;
+    case "howToSetHome":
+      title = "How do I Set Home?";
+      break;
+    case "howToMakeMoney":
+      title = "Ways of MAKING MONEY!";
+      break;
+    case "whatIsCTA":
+      title = "What is an CTA?";
+      break;
+    case "howToGetFastFame":
+      title = "How do I get fame fast?";
+      break;
+    case "whatIsHideout":
+      title = "What is an Hideout";
+      break;
+    case "whatIsWwpDefense":
+      title = "What is WWP Defense?";
+      break;
+    default:
+      title = `Showing document#${
+        Object.keys(faq).findIndex((m) => m === answer) + 1
+      }`;
+      break;
+  }
+  return title;
+}
 
 module.exports = {
   nicknameMaker,
@@ -804,4 +858,5 @@ module.exports = {
   dateMaker,
   getDate,
   cutSentence,
+  faqTitle,
 };

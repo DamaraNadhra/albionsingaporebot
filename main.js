@@ -405,7 +405,10 @@ client.on("messageCreate", async (message) => {
           .setAuthor(avalist[m].name, avalist[m].icon)
           .setColor("ORANGE")
           .setImage(avalist[m].pic)
-          .setDescription(avalist[m].string)
+          .setDescription(avalist[m].string);
+        const embedDesc = new MessageEmbed()
+          .setColor("ORANGE")
+          .setDescription(`**Shortcut:** \`!${m}\` \n**Requirement:** 1100+ IP`)
           .setFooter(
             `Requested by ${
               message.guild.members.cache.get(message.author.id).displayName
@@ -414,7 +417,7 @@ client.on("messageCreate", async (message) => {
           );
         message.channel.send({
           content: "Processing...",
-          embeds: [embed],
+          embeds: [embed, embedDesc],
           components: [new MessageActionRow().addComponents(listButton)],
         });
       } else {

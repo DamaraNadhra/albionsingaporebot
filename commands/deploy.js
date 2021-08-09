@@ -1,4 +1,15 @@
 const { Message, Client, MessageButton } = require("discord.js");
+const { zvzlist } = require("../list");
+var zvzChoices = [];
+Object.keys(zvzlist).forEach((thing, index) => {
+  Object.keys(zvzlist[thing]).forEach((m, i) => {
+    var object = {};
+    object["name"] = zvzlist[thing][m].label;
+    object["value"] = m;
+    zvzChoices.push(object);
+  });
+});
+
 module.exports = {
   name: "deploy",
   description: "none",
@@ -97,6 +108,15 @@ module.exports = {
           name: "zvz-builds",
           description:
             "Returns you a list of approved ZvZ builds according to ARCH main Discord",
+          options: [
+            {
+              name: "builds",
+              description: "the specified build that you want to check",
+              required: false,
+              choices: zvzChoices,
+              type: "STRING",
+            },
+          ],
         },
         {
           name: "giverep",
@@ -141,6 +161,20 @@ module.exports = {
                 "the target to mention, this is optional, just to make it looks cooler.",
               type: "USER",
               required: false,
+            },
+          ],
+        },
+        {
+          name: "ava-builds",
+          description:
+            "Shows the list of the current meta builds for Avalonian Raid dungeon.",
+          options: [
+            {
+              name: "builds",
+              description: "the specified build that you want to see.",
+              type: "STRING",
+              required: false,
+              choices,
             },
           ],
         },

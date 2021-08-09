@@ -6,6 +6,7 @@ const {
   Client,
 } = require("discord.js");
 const { faq, errorSelectMenus } = require("../../list");
+const { faqTitle } = require("../../util");
 module.exports = {
   name: "docs",
   description: "Showing docs of the guilds",
@@ -19,47 +20,15 @@ module.exports = {
     let answer = Object.keys(faq).find((m) =>
       m.toLowerCase().includes(question.toLowerCase())
     );
-    switch (answer) {
-      case "whatIsZvz":
-        title = "What is ZvZ?";
-        break;
-      case "whatIsCaravan":
-        title = "What is Caravan?";
-        break;
-      case "howToJoinCaravan":
-        title = "How do I join Caravan?";
-        break;
-      case "caravanGears":
-        title = "What gear should I wear in Caravan?";
-        break;
-      case "howToGetIntoR3OrWwp":
-        title = "How do I get into R3 or WWP?";
-        break;
-      case "whichIsBetterR3OrWwp":
-        title = "Which one is better? R3 or WWP?";
-        break;
-      case "howToGetIntoR3OrWwp":
-        title = "How do I get into R3 or WWP?";
-        break;
-      case "commonlyUsedAcronyms":
-        title = "Commony Used Acronyms (and terms):";
-        break;
-      case "whatIsAvalonianRaidDungeon":
-        title = "What is Avalonian Dungeon?";
-        break;
-      default:
-        title = `Showing document#${
-          Object.keys(faq).findIndex((m) => m === answer) + 1
-        }`;
-        break;
-    }
+    const title = faqTitle(answer);
     if (answer !== undefined && answer !== "approvedScout") {
       interaction.reply({
         content: `_Showing answer for <@${
-          target ? target.id : interaction.user.id
+          reaction.user.id
         }>_ \n<:singaporeDiscordEmoji:873354185645625414> __**${title}**__ \n${
-          faq[answer]
+          Boolean(faq[answer].attachment) ? faq[answer].string : faq[answer]
         }`,
+        files: Boolean(faq[answer].attachment) ? faq[answer].attachment : [],
       });
     } else if (answer === "approvedScout") {
       interaction.reply({
@@ -94,37 +63,7 @@ module.exports = {
                 .then(() => {
                   Object.keys(faq).forEach((val, index) => {
                     if (reaction.values.includes(val)) {
-                      switch (val) {
-                        case "whatIsZvz":
-                          title = "What is ZvZ?";
-                          break;
-                        case "whatIsCaravan":
-                          title = "What is Caravan?";
-                          break;
-                        case "howToJoinCaravan":
-                          title = "How do I join Caravan?";
-                          break;
-                        case "caravanGears":
-                          title = "What gear should I wear in Caravan?";
-                          break;
-                        case "howToGetIntoR3OrWwp":
-                          title = "How do I get into R3 or WWP?";
-                          break;
-                        case "whichIsBetterR3OrWwp":
-                          title = "Which one is better? R3 or WWP?";
-                          break;
-                        case "howToGetIntoR3OrWwp":
-                          title = "How do I get into R3 or WWP?";
-                          break;
-                        case "commonlyUsedAcronyms":
-                          title = "Commony Used Acronyms (and terms):";
-                          break;
-                        case "whatIsAvalonianRaidDungeon":
-                          title = "What is Avalonian Dungeon?";
-                          break;
-                        default:
-                          break;
-                      }
+                      const title = faqTitle(val);
                       if (val === "approvedScout") {
                         reaction.followUp({
                           content: `_Showing answer for <@${reaction.user.id}>_ \n<:singaporeDiscordEmoji:873354185645625414> __**Approved Scout**__`,
@@ -148,8 +87,13 @@ module.exports = {
                           content: `_Showing answer for <@${
                             reaction.user.id
                           }>_ \n<:singaporeDiscordEmoji:873354185645625414> __**${title}**__ \n${
-                            faq[reaction.values]
+                            Boolean(faq[reaction.values].attachment)
+                              ? faq[reaction.values].string
+                              : faq[reaction.values]
                           }`,
+                          files: Boolean(faq[reaction.values].attachment)
+                            ? faq[reaction.values].attachment
+                            : [],
                         });
                       }
                     }

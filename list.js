@@ -98,7 +98,7 @@ const AvArow = new MessageActionRow().addComponents(
     ])
 );
 const faq = {
-  commonlyUsedAcronyms: `Commonly Used Acronyms (and terms):\n• WWP = Whitewall Pass\n• CNA = CN Avalonian Company\n• R3 = Redtree Enclave\n• AR = Arthur's Rest\n• ML = Martlock\n• CL = Caerleon\n• FF = Fame Farm\n• Ava = Avalonian Raid\n• RL = Raid Leader\n• ZvZ = Zerg vs Zerg\n• CTA = Call to Arms`,
+  commonlyUsedAcronyms: `• WWP = Whitewall Pass\n• CNA = CN Avalonian Company\n• R3 = Redtree Enclave\n• AR = Arthur's Rest\n• ML = Martlock\n• CL = Caerleon\n• FF = Fame Farm\n• Ava = Avalonian Raid\n• RL = Raid Leader\n• ZvZ = Zerg vs Zerg\n• CTA = Call to Arms`,
   whatIsCaravan:
     "Travelling en masse from point A to point B in a safe manner — transporting gears/items you want to sell and/or individual necessities. E.g WWP->ML->WWP",
   howToJoinCaravan:
@@ -124,6 +124,21 @@ const faq = {
     description: `**Approved Scout** is a title given to trusted and tested scout, in order to be an **approved scout**, you must **follow the steps** explained below: \n\n**1.** Wear build that can buy time for the party to port out from the dungeon once the **divers/gankers** came in. (build example will show below) \n**2.** You must report the situation **regularly** to the party member. \n**3.** Turn on **mastery volume and combat log**, so you can hear gankers steps and whenever they pick stuff. \n**4.** After you have followed all the steps, contact one of the officers and send **a screenshot of your scout build**. \n**5.** The officer will add you into the **ARCH approved scout List** \n\n**Note:** \n**1.** If let's say your party got doved by divers. You **are not** responsible to regear / compensate the deaths, but they have the right **to not invite you** again in the future. \n**2.** If gankers came in, and you died when you are trying to hold them, it's **mandatory** to regear and come back to the dungeon asap. \n**3.** Not completing the task **means no PAYMENT** \n\n click this link below to see Singapore's approved scout list: \nhttps://arch.gay/scouts/g/singapore`,
     image: "https://i.imgur.com/eCq54NK.jpg",
   },
+  howToSetHome: {
+    string:
+      "There is a board in the left side of the market place (your PoV, not the merchant's). Click the board and click set home. Make sure to set your home after each caravan just to be sure you did not reset your home. (as for the image will be shown below)",
+    attachment: ["https://i.imgur.com/dyfHjqu.png"],
+  },
+  howToMakeMoney:
+    "• Avalonian Dungeon\n• Flipping \n• Refining \n• Crafting \n• Labourers \n• Kill People \n• HCE \n• Use credit card lul",
+  whatIsCTA:
+    "It is a call to mass up for objectives, e.g. defending/attacking castles, defending WWP from enemies, securing Old White (mammoth world boss), etc. They are mandatory to attend if you are online. If you can't make it because of real life situations, don't worry about it, real life has to be your #1 priority.",
+  howToGetFastFame:
+    "Again, it depends on what resources you currently have. If you have the skills, you can do 5v5 or 10v10 lethal hellgates and keep winning to fame farm. You can also join high level HCEs or avas to fame farm. Asides from those, solo/group dungeons are your alternatives.",
+  whatIsHideout:
+    "**Hideouts** are structures that guilds may place in the Outlands to serve as bases of operation. They can provide various useful functions including a standard bank, guild bank, and home respawn point, and can be upgraded to also provide access to various useful NPCs and a large number of customizable building spaces. \n\nHideouts are subject to attack by whichever guild owns the local territory, so hideout owners must be prepared for both politics and war. A guild must invest a large number of resources and organization to building and maintaining a hideout, or even multiple hideouts, but having one is crucial for spending any extended period of time in the Outlands. \n\nHideouts were introduced in Albion Online with the Queen Update in January 2020.",
+  whatIsWwpDefense:
+    "It is defending WWP from enemy guild or when ava is getting dived. When WWP defense is called, it is mandatory for everyone in WWP to stop what they are doing and join the defense. Usually a message will be issued in #❗❗ping or in-game chat.",
 };
 const avalist = {
   "ava-realmbreaker": {
