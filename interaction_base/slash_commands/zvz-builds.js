@@ -4,6 +4,7 @@ const {
   MessageButton,
   MessageActionRow,
   CommandInteraction,
+  MessageEmbed,
 } = require("discord.js");
 const { row, tankRow, healRow, zvzlist } = require("../../list");
 module.exports = {
