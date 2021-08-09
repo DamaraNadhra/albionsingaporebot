@@ -11,7 +11,7 @@ module.exports = {
   name: "docs",
   description: "Showing docs of the guilds",
   /**
-   *
+   * @param {CommandInteraction} interaction
    * @param {Client} client
    */
   execute(interaction, client) {
@@ -24,7 +24,7 @@ module.exports = {
     if (answer !== undefined && answer !== "approvedScout") {
       interaction.reply({
         content: `_Showing answer for <@${
-          interaction.user.id
+          target ? target.id : interaction.user.id
         }>_ \n<:singaporeDiscordEmoji:873354185645625414> __**${title}**__ \n${
           Boolean(faq[answer].attachment) ? faq[answer].string : faq[answer]
         }`,
@@ -66,7 +66,9 @@ module.exports = {
                       const title = faqTitle(val);
                       if (val === "approvedScout") {
                         reaction.followUp({
-                          content: `_Showing answer for <@${reaction.user.id}>_ \n<:singaporeDiscordEmoji:873354185645625414> __**Approved Scout**__`,
+                          content: `_Showing answer for <@${
+                            target ? target.id : reaction.user.id
+                          }>_ \n<:singaporeDiscordEmoji:873354185645625414> __**Approved Scout**__`,
                           embeds: [
                             new MessageEmbed()
                               .setAuthor(
