@@ -862,6 +862,36 @@ const errorSelectMenus = new MessageActionRow().addComponents(
         emoji: "<:singaporeDiscordEmoji:873354185645625414>",
         value: "howToJoinAva",
       },
+      {
+        label: "How to set home?",
+        description: `${cutSentence(faq.howToSetHome, 50)}`,
+        emoji: "<:singaporeDiscordEmoji:873354185645625414>",
+        value: "howToSetHome",
+      },
+      {
+        label: "Ways of money making.",
+        description: `${cutSentence(faq.howToMakeMoney, 50)}`,
+        emoji: "<:singaporeDiscordEmoji:873354185645625414>",
+        value: "howToMakeMoney",
+      },
+      {
+        label: "CTA Definition",
+        description: `${cutSentence(faq.whatIsCTA, 50)}`,
+        emoji: "<:singaporeDiscordEmoji:873354185645625414>",
+        value: "whatIsCTA",
+      },
+      {
+        label: "How to get fast fame",
+        description: `${cutSentence(faq.howToGetFastFame, 50)}`,
+        emoji: "<:singaporeDiscordEmoji:873354185645625414>",
+        value: "howToGetFastFame",
+      },
+      {
+        label: "WWP Defense explanation",
+        description: `${cutSentence(faq.whatIsWwpDefense, 50)}`,
+        emoji: "<:singaporeDiscordEmoji:873354185645625414>",
+        value: "whatIsWwpDefense",
+      },
     ])
 );
 module.exports = {

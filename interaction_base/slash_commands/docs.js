@@ -87,7 +87,7 @@ module.exports = {
                       } else {
                         reaction.followUp({
                           content: `_Showing answer for <@${
-                            reaction.user.id
+                            target ? target.id : reaction.user.id
                           }>_ \n<:singaporeDiscordEmoji:873354185645625414> __**${title}**__ \n${
                             Boolean(faq[reaction.values].attachment)
                               ? faq[reaction.values].string
