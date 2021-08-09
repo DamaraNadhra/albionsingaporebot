@@ -795,6 +795,10 @@ const getDate = () => {
   return `📅 ${day}, ${dateee.toUTCString().split(/ +/g)[2]} ${date}`;
 };
 function faqTitle(param) {
+  if (typeof param !== String)
+    throw new Error(
+      `${param} was supposed to be a String instead of ${typeof param}`
+    );
   switch (param) {
     case "whatIsZvz":
       title = "What is ZvZ?";

@@ -864,7 +864,7 @@ const errorSelectMenus = new MessageActionRow().addComponents(
       },
       {
         label: "How to set home?",
-        description: `${cutSentence(faq.howToSetHome, 50)}`,
+        description: `${cutSentence(faq.howToSetHome.string, 50)}`,
         emoji: "<:singaporeDiscordEmoji:873354185645625414>",
         value: "howToSetHome",
       },
