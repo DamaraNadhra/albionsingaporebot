@@ -11,9 +11,7 @@ const client = new Discord.Client({
 });
 const {
   avalist,
-  dpsList,
-  healList,
-  list,
+  zvzlist,
   negativeResponses,
   positiveResponses,
 } = require("./list");
@@ -422,163 +420,58 @@ client.on("messageCreate", async (message) => {
       }
     }
   });
-  Object.keys(list).forEach((m, i) => {
-    if (command.includes(m)) {
-      let botCommandChannel =
-        message.guild.channels.cache.get("760731834354499585");
-      if (
-        (message.channel.id === "760731834354499585") |
-        (message.channel.id === "779514684797091850") |
-        message.member.roles.cache.has("759793776439984170") |
-        message.member.permissions.has("ADMINISTRATOR")
-      ) {
-        let zvzlistButton = new MessageButton()
-          .setCustomId("listbuttonzvz")
-          .setStyle("SUCCESS")
-          .setLabel("Look for more builds!")
-          .setEmoji("<:jennielove:844893922634235904>");
-        let referenceButton = new MessageButton()
-          .setStyle("LINK")
-          .setURL(list[m][2])
-          .setLabel("ARCH main discord reference");
-        let embed = new MessageEmbed()
-          .setAuthor(
-            `'zl [SING] ${
-              message.guild.members.cache.get(message.author.id).displayName
-            }`,
-            message.author.displayAvatarURL()
-          )
-          .setColor("ORANGE")
-          .setImage(list[m][0])
-          .setDescription("You must reach at least 1100 IP")
-          .setFooter(
-            `Requested by ${
-              message.guild.members.cache.get(message.author.id).displayName
-            }`,
-            message.author.displayAvatarURL()
-          );
-        message.channel.send({
-          content: "Processing...",
-          embeds: [embed],
-          components: [
-            new MessageActionRow().addComponents(
-              zvzlistButton,
-              referenceButton
-            ),
-          ],
-        });
-      } else {
-        message.reply(`Please redo this command at ${botCommandChannel}`);
+  Object.keys(zvzlist).forEach((m, i) => {
+    Object.keys(zvzlist[m]).forEach((element, index) => {
+      if (element.includes(command)) {
+        const build = zvzlist[m][element];
+        let botCommandChannel =
+          message.guild.channels.cache.get("760731834354499585");
+        if (
+          (message.channel.id === "760731834354499585") |
+          (message.channel.id === "779514684797091850") |
+          message.member.roles.cache.has("759793776439984170") |
+          message.member.permissions.has("ADMINISTRATOR")
+        ) {
+          let zvzlistButton = new MessageButton()
+            .setCustomId("listbuttonzvz")
+            .setStyle("SUCCESS")
+            .setLabel("Look for more builds!")
+            .setEmoji("<:jennielove:844893922634235904>");
+          let referenceButton = new MessageButton()
+            .setStyle("LINK")
+            .setURL(build.reference)
+            .setLabel("ARCH main discord reference");
+          let embed = new MessageEmbed()
+            .setAuthor(build.label, build.pic)
+            .setColor("ORANGE")
+            .setImage(list[m][0])
+            .setDescription("You must reach at least 1100 IP");
+          const embedDesc = new MessageEmbed()
+            .setColor("ORANGE")
+            .setDescription(
+              `**Shortcut:** \`!${element}\` \n**Requirement:** 1100+ IP`
+            )
+            .setFooter(
+              `Requested by ${
+                message.guild.members.cache.get(message.author.id).displayName
+              }`,
+              message.author.displayAvatarURL()
+            );
+          message.channel.send({
+            content: "Processing...",
+            embeds: [embed, embedDesc],
+            components: [
+              new MessageActionRow().addComponents(
+                zvzlistButton,
+                referenceButton
+              ),
+            ],
+          });
+        } else {
+          message.reply(`Please redo this command at ${botCommandChannel}`);
+        }
       }
-    }
-  });
-  Object.keys(dpsList).forEach((m, i) => {
-    if (command.includes(m)) {
-      let botCommandChannel =
-        message.guild.channels.cache.get("760731834354499585");
-      if (
-        (message.channel.id === "760731834354499585") |
-        (message.channel.id === "779514684797091850") |
-        message.member.roles.cache.has("759793776439984170") |
-        message.member.permissions.has("ADMINISTRATOR")
-      ) {
-        let zvzlistButton = new MessageButton()
-          .setCustomId("listbuttonzvz")
-          .setStyle("SUCCESS")
-          .setLabel("Look for more builds!")
-          .setEmoji("<:jennielove:844893922634235904>");
-        let referenceButton = new MessageButton()
-          .setStyle("LINK")
-          .setURL(dpsList[m][2])
-          .setLabel("ARCH main discord reference");
-        let embed = new MessageEmbed()
-          .setAuthor(
-            `'zl [SING] ${
-              message.guild.members.cache.get(message.author.id).displayName
-            }`,
-            message.author.displayAvatarURL()
-          )
-          .setColor("ORANGE")
-          .setImage(dpsList[m][0])
-          .setDescription("You must reach at least 1100 IP")
-          .setFooter(
-            `Requested by ${
-              message.guild.members.cache.get(message.author.id).displayName
-            }`,
-            message.author.displayAvatarURL()
-          );
-        message.channel.send({
-          content: "Processing...",
-          embeds: [embed],
-          components: [
-            new MessageActionRow().addComponents(
-              zvzlistButton,
-              referenceButton
-            ),
-          ],
-        });
-      } else {
-        message.reply(`Please redo this command at ${botCommandChannel}`);
-      }
-    }
-  });
-  Object.keys(healList).forEach((m, i) => {
-    if (command.includes(m)) {
-      let botCommandChannel =
-        message.guild.channels.cache.get("760731834354499585");
-      if (
-        (message.channel.id === "760731834354499585") |
-        (message.channel.id === "779514684797091850") |
-        message.member.roles.cache.has("759793776439984170") |
-        message.member.permissions.has("ADMINISTRATOR")
-      ) {
-        let zvzlistButton = new MessageButton()
-          .setCustomId("listbuttonzvz")
-          .setStyle("SUCCESS")
-          .setLabel("Look for more builds!")
-          .setEmoji("<:jennielove:844893922634235904>");
-        let referenceButton = new MessageButton()
-          .setStyle("LINK")
-          .setURL(healList[m][2])
-          .setLabel("ARCH main discord reference");
-        let embed = new MessageEmbed()
-          .setAuthor(
-            `'zl [SING] ${
-              Boolean(
-                message.guild.members.cache.get(message.author.id).nickname
-              )
-                ? message.guild.members.cache.get(message.author.id).nickname
-                : message.author.username
-            }`,
-            message.author.displayAvatarURL()
-          )
-          .setColor("ORANGE")
-          .setImage(healList[m][0])
-          .setDescription("You must reach at least 1100 IP")
-          .setFooter(
-            `Requested by ${
-              Boolean(
-                message.guild.members.cache.get(message.author.id).nickname
-              )
-                ? message.guild.members.cache.get(message.author.id).nickname
-                : message.author.username
-            }`,
-            message.author.displayAvatarURL()
-          );
-        message.channel.send({
-          content: "Processing...",
-          embeds: [embed],
-          components: [
-            new MessageActionRow().addComponents(
-              zvzlistButton,
-              referenceButton
-            ),
-          ],
-        });
-      } else {
-        message.reply(`Please redo this command at ${botCommandChannel}`);
-      }
-    }
+    });
   });
 });
 

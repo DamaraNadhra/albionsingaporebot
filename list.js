@@ -335,6 +335,12 @@ const row = new MessageActionRow().addComponents(
         value: "zvz-greataxe",
         emoji: "<:greataxe:860687945119563786>",
       },
+      {
+        label: "Infernal Scythe",
+        description: "Axe version of bloodletter",
+        value: "zvz-infernalscythe",
+        emoji: "<:infernalscythe:874101898779693086>",
+      },
     ])
 );
 const tankRow = new MessageActionRow().addComponents(
@@ -429,171 +435,269 @@ const healRow = new MessageActionRow().addComponents(
       },
     ])
 );
-const dpsList = {
-  "zvz-siegebow": [
-    "https://i.imgur.com/s5kBpr1.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101093",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807658296416665621",
-  ],
-  "zvz-permafrost": [
-    "https://i.imgur.com/VY91AFv.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101097",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807675958097477672",
-  ],
-  "zvz-mistpiercer": [
-    "https://i.imgur.com/MMIyALt.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101099",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807679039275139102",
-  ],
-  "zvz-energyshaper": [
-    "https://i.imgur.com/qDdKBSB.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101101",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807700941457063986",
-  ],
-  "zvz-brimstone": [
-    "https://i.imgur.com/1k8FJlp.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101179",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807675595797823488",
-  ],
-  "zvz-dawnsong": [
-    "https://i.imgur.com/61o9SVr.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101102",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807701098026106930",
-  ],
-  "zvz-halberd": [
-    "https://i.imgur.com/Z66GRfX.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101103",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807781638494486548",
-  ],
-  "zvz-realmbreaker": [
-    "https://i.imgur.com/oOUnwKo.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101106",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807781876571308042",
-  ],
-  "zvz-daybreaker": [
-    "https://i.imgur.com/KAag4qz.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101108",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807782187550244884",
-  ],
-  "zvz-galatine": [
-    "https://i.imgur.com/cU4Y1Og.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101109",
-    "https://discord.com/channels/200746010102726657/807319001234407504/807786585302368266",
-  ],
-  "zvz-clarent": [
-    "https://i.imgur.com/p8ElKkd.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101112",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808048332256968714",
-  ],
-  "zvz-spirithunter": [
-    "https://i.imgur.com/rxFjtVy.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101113",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808051545865715722",
-  ],
-  "zvz-dualswords": [
-    "https://i.imgur.com/9jDIX7D.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101116",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808053999471034368",
-  ],
-  "zvz-bridled": [
-    "https://i.imgur.com/ylc2jgp.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101147",
-    "https://discord.com/channels/200746010102726657/807319001234407504/816410289292967947",
-  ],
-  "zvz-greataxe": [
-    "https://i.imgur.com/jD5hSJ0.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101150",
-    "https://discord.com/channels/200746010102726657/807319001234407504/843587604413808680",
-  ],
-  "zvz-damnation": [
-    "https://i.imgur.com/SoSgWnJ.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101125",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808440044594659389",
-  ],
-  "zvz-shadowcaller": [
-    "https://i.imgur.com/LUAPvmA.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101138",
-    "https://discord.com/channels/200746010102726657/807319001234407504/815692980673445888",
-  ],
-  "zvz-cursedskull": [
-    "https://i.imgur.com/jePPweD.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101152",
-    "https://discord.com/channels/200746010102726657/807319001234407504/843590654676303942",
-  ],
-  "zvz-infernalscythe": [
-    "https://i.imgur.com/XqHkV5v.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/104418",
-    "https://discord.com/channels/200746010102726657/807319001234407504/871107864045957150",
-  ],
-};
-const healList = {
-  "zvz-occult": [
-    "https://i.imgur.com/iqEZaeO.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101117",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808320638447124500",
-  ],
-  "zvz-enigmatic": [
-    "https://i.imgur.com/4Ixgf2O.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101120",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808324352961544223",
-  ],
-  "zvz-locus": [
-    "https://i.imgur.com/BV3fNwg.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101121",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808337336198889472",
-  ],
-  "zvz-arcane": [
-    "https://i.imgur.com/RDJRDw5.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101124",
-    "https://discord.com/channels/200746010102726657/807319001234407504/808382611004719134",
-  ],
-  "zvz-fallen": [
-    "https://i.imgur.com/voOcedm.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101129",
-    "https://discord.com/channels/200746010102726657/807319001234407504/809525705406808115",
-  ],
-  "zvz-greatholy": [
-    "https://i.imgur.com/qA4VqIr.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101132",
-    "https://discord.com/channels/200746010102726657/807319001234407504/809525850487259156",
-  ],
-  "zvz-wildstaff": [
-    "https://i.imgur.com/7c1HlRw.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101133",
-    "https://discord.com/channels/200746010102726657/807319001234407504/809526032712335370",
-  ],
-  "zvz-rampant": [
-    "https://i.imgur.com/laJJaSW.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101135",
-    "https://discord.com/channels/200746010102726657/807319001234407504/809526200036622386",
-  ],
-};
-const list = {
-  "zvz-grailseeker": [
-    "https://i.imgur.com/p3e1S9u.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101137",
-    "https://discord.com/channels/200746010102726657/807319001234407504/810357183257509898",
-  ],
-  "zvz-soulscythe": [
-    "https://i.imgur.com/zbIHNd4.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101140",
-    "https://discord.com/channels/200746010102726657/807319001234407504/810356814134509589",
-  ],
-  "zvz-grovekeeper": [
-    "https://i.imgur.com/C0t25qT.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101146",
-    "https://discord.com/channels/200746010102726657/807319001234407504/810356518288490496",
-  ],
-  "zvz-morningstar": [
-    "https://i.imgur.com/S9JfLza.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101151",
-    "https://discord.com/channels/200746010102726657/807319001234407504/810356339485835296",
-  ],
-  "zvz-camlann": [
-    "https://i.imgur.com/Pwlqi2E.jpg",
-    "https://albiononline.com/en/characterbuilder/solo-builds/view/101156",
-    "https://discord.com/channels/200746010102726657/807319001234407504/810356123470921749",
-  ],
+const zvzlist = {
+  dps: {
+    "zvz-siegebow": {
+      label: "Siegebow",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_CROSSBOWLARGE_MORGANA@1.png?quality=2",
+      icon: "https://i.imgur.com/s5kBpr1.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101093",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807658296416665621",
+    },
+    "zvz-permafrost": {
+      label: "Permafrost",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_ICECRYSTAL_UNDEAD@1.png?quality=2",
+      icon: "https://i.imgur.com/VY91AFv.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101097",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807675958097477672",
+    },
+    "zvz-mistpiercer": {
+      label: "Mistpiercer",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_BOW_AVALON@2.png?quality=2",
+      icon: "https://i.imgur.com/MMIyALt.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101099",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807679039275139102",
+    },
+    "zvz-energyshaper": {
+      label: "Energy Shaper",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_CROSSBOW_CANNON_AVALON@2.png?quality=2",
+      icon: "https://i.imgur.com/qDdKBSB.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101101",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807700941457063986",
+    },
+    "zvz-brimstone": {
+      label: "Brimstone",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_FIRESTAFF_HELL@2.png?quality=2",
+      icon: "https://i.imgur.com/1k8FJlp.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101179",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807675595797823488",
+    },
+    "zvz-dawnsong": {
+      label: "Dawnsong",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_FIRE_RINGPAIR_AVALON@1.png?quality=2",
+      icon: "https://i.imgur.com/61o9SVr.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101102",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807701098026106930",
+    },
+    "zvz-halberd": {
+      label: "Halberd",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_HALBERD@1.png?quality=2",
+      icon: "https://i.imgur.com/Z66GRfX.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101103",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807781638494486548",
+    },
+    "zvz-realmbreaker": {
+      label: "Realmbreaker",
+      pic: "https://render.albiononline.com/v1/item/T7_2H_AXE_AVALON@2.png?quality=2",
+      icon: "https://i.imgur.com/oOUnwKo.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101106",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807781876571308042",
+    },
+    "zvz-daybreaker": {
+      label: "Daybreaker",
+      pic: "https://render.albiononline.com/v1/item/T7_MAIN_SPEAR_LANCE_AVALON@2.png?quality=2",
+      icon: "https://i.imgur.com/KAag4qz.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101108",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807782187550244884",
+    },
+    "zvz-galatine": {
+      label: "Galatine Pair",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_DUALSCIMITAR_UNDEAD@2.png?quality=2",
+      icon: "https://i.imgur.com/cU4Y1Og.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101109",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/807786585302368266",
+    },
+    "zvz-clarent": {
+      label: "Clarent Blade",
+      pic: "https://render.albiononline.com/v1/item/T6_MAIN_SCIMITAR_MORGANA@2.png?quality=2",
+      icon: "https://i.imgur.com/p8ElKkd.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101112",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808048332256968714",
+    },
+    "zvz-spirithunter": {
+      label: "Spirithunter",
+      pic: "https://render.albiononline.com/v1/item/T8_2H_HARPOON_HELL@2.png?quality=2",
+      icon: "https://i.imgur.com/rxFjtVy.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101113",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808051545865715722",
+    },
+    "zvz-dualswords": {
+      label: "Dualswords",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_DUALSWORD@2.png?quality=2",
+      icon: "https://i.imgur.com/9jDIX7D.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101116",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808053999471034368",
+    },
+    "zvz-bridled": {
+      label: "Bridled Fury",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_DAGGER_KATAR_AVALON@2.png?quality=2",
+      icon: "https://i.imgur.com/ylc2jgp.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101147",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/816410289292967947",
+    },
+    "zvz-greataxe": {
+      label: "Greataxe",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_AXE@2.png?quality=2",
+      icon: "https://i.imgur.com/jD5hSJ0.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101150",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/843587604413808680",
+    },
+    "zvz-damnation": {
+      label: "Damnation Staff",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_CURSEDSTAFF_MORGANA@2.png?quality=2",
+      icon: "https://i.imgur.com/SoSgWnJ.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101125",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808440044594659389",
+    },
+    "zvz-shadowcaller": {
+      label: "Shadowcaller",
+      pic: "https://render.albiononline.com/v1/item/T7_MAIN_CURSEDSTAFF_AVALON@2.png?quality=2",
+      icon: "https://i.imgur.com/LUAPvmA.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101138",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/815692980673445888",
+    },
+    "zvz-cursedskull": {
+      label: "Cursed Skull",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_SKULLORB_HELL@2.png?quality=2",
+      icon: "https://i.imgur.com/jePPweD.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101152",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/843590654676303942",
+    },
+    "zvz-infernalscythe": {
+      label: "Infernal Scythe",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_SCYTHE_HELL@2.png?quality=2",
+      icon: "https://i.imgur.com/XqHkV5v.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/104418",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/871107864045957150",
+    },
+  },
+  heals: {
+    "zvz-occult": {
+      label: "Occult",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_ARCANESTAFF_HELL@2.png?quality=2",
+      icon: "https://i.imgur.com/iqEZaeO.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101117",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808320638447124500",
+    },
+    "zvz-enigmatic": {
+      label: "Enigmatic",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_ENIGMATICSTAFF@2.png?quality=2",
+      icon: "https://i.imgur.com/4Ixgf2O.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101120",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808324352961544223",
+    },
+    "zvz-locus": {
+      label: "Malevolent Locus",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_ENIGMATICORB_MORGANA@1.png?quality=2",
+      icon: "https://i.imgur.com/BV3fNwg.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101121",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808337336198889472",
+    },
+    "zvz-arcane": {
+      label: "One handed Arcane Staff",
+      pic: "https://render.albiononline.com/v1/item/T6_MAIN_ARCANESTAFF@1.png?quality=2",
+      icon: "https://i.imgur.com/RDJRDw5.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101124",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/808382611004719134",
+    },
+    "zvz-fallen": {
+      label: "Fallen Staff",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_HOLYSTAFF_HELL@1.png?quality=2",
+      icon: "https://i.imgur.com/voOcedm.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101129",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/809525705406808115",
+    },
+    "zvz-greatholy": {
+      label: "Greatholy Staff",
+      pic: "https://render.albiononline.com/v1/item/T7_2H_HOLYSTAFF@1.png?quality=2",
+      icon: "https://i.imgur.com/qA4VqIr.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101132",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/809525850487259156",
+    },
+    "zvz-wildstaff": {
+      label: "Wildstaff",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_WILDSTAFF@1.png?quality=2",
+      icon: "https://i.imgur.com/7c1HlRw.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101133",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/809526032712335370",
+    },
+    "zvz-rampant": {
+      label: "Rampant Staff",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_NATURESTAFF_KEEPER@1.png?quality=2",
+      icon: "https://i.imgur.com/laJJaSW.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101135",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/809526200036622386",
+    },
+  },
+  tanks: {
+    "zvz-grailseeker": {
+      label: "Grailseeker",
+      pic: "https://render.albiononline.com/v1/item/T7_2H_QUARTERSTAFF_AVALON@1.png?quality=2",
+      icon: "https://i.imgur.com/p3e1S9u.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101137",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/810357183257509898",
+    },
+    "zvz-soulscythe": {
+      label: "Soulscythe",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_TWINSCYTHE_HELL@1.png?quality=2",
+      icon: "https://i.imgur.com/zbIHNd4.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101140",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/810356814134509589",
+    },
+    "zvz-grovekeeper": {
+      label: "Grovekeeper / Pog log",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_RAM_KEEPER@1.png?quality=2",
+      icon: "https://i.imgur.com/C0t25qT.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101146",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/810356518288490496",
+    },
+    "zvz-morningstar": {
+      label: "Morningstar",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_FLAIL@2.png?quality=2",
+      icon: "https://i.imgur.com/S9JfLza.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101151",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/810356339485835296",
+    },
+    "zvz-camlann": {
+      label: "Camlannn",
+      pic: "https://render.albiononline.com/v1/item/T6_2H_MACE_MORGANA@2.png?quality=2",
+      icon: "https://i.imgur.com/Pwlqi2E.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101156",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/810356123470921749",
+    },
+  },
 };
 const negativeResponses = [
   "You are so stupid, when you heard 90% of all crimes occur around the home, you went out.",
@@ -752,9 +856,7 @@ module.exports = {
   row,
   tankRow,
   healRow,
-  dpsList,
-  healList,
-  list,
+  zvzlist,
   negativeResponses,
   positiveResponses,
   faq,

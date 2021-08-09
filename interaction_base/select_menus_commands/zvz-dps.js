@@ -5,22 +5,29 @@ const {
   MessageButton,
   MessageActionRow,
 } = require("discord.js");
-const { dpsList } = require("../../list");
+const { zvzlist } = require("../../list");
 module.exports = {
   name: "dps",
   description: "selectMenu for zvz dps",
+  /**
+   *
+   * @param {Interaction} interaction
+   * @param {*} client
+   */
   async execute(interaction, client) {
-    Object.keys(dpsList).forEach((m, i) => {
+    Object.keys(zvzlist.dps).forEach((m, i) => {
       if (interaction.values.includes(m)) {
         const embed = new MessageEmbed()
           .setColor("ORANGE")
-          .setAuthor("'zl [SING] LongLiveLuai", client.user.displayAvatarURL())
-          .setImage(dpsList[m][0])
-          .setFooter("According to ARCH main discord zvz gears");
-        const button = new MessageButton()
-          .setStyle("LINK")
-          .setURL(dpsList[m][1])
-          .setLabel("Link to the Website");
+          .setAuthor(zvzlist.dps[m].pic, zvzlist.dps[m].pic)
+          .setImage(zvzlist.dps[m].icon);
+        const embedDesc = new MessageEmbed()
+          .setColor("ORANGE")
+          .setDescription(`**Shortcut:** \`!${m}\` \n**Requirement:** 1100+ IP`)
+          .setFooter(
+            `Requested by ${interaction.user.username}`,
+            interaction.user.displayAvatarURL()
+          );
         const buttonback = new MessageButton()
           .setStyle("SUCCESS")
           .setCustomId("back")
@@ -33,33 +40,31 @@ module.exports = {
           .setEmoji("🚨");
         const referenceButton = new MessageButton()
           .setStyle("LINK")
-          .setURL(dpsList[m][2])
+          .setURL(zvzlist.dps[m].reference)
           .setLabel("ARCH main discord reference");
         if (interaction.replied) {
           interaction.editReply({
             content: "Hold on",
             components: [
               new MessageActionRow().addComponents(
-                button,
                 buttonback,
                 referenceButton,
                 deleteButton
               ),
             ],
-            embeds: [embed],
+            embeds: [embed, embedDesc],
           });
         } else {
           interaction.update({
             content: "Hold on",
             components: [
               new MessageActionRow().addComponents(
-                button,
                 buttonback,
                 referenceButton,
                 deleteButton
               ),
             ],
-            embeds: [embed],
+            embeds: [embed, embedDesc],
           });
         }
       }
