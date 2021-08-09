@@ -520,6 +520,11 @@ const dpsList = {
     "https://albiononline.com/en/characterbuilder/solo-builds/view/101152",
     "https://discord.com/channels/200746010102726657/807319001234407504/843590654676303942",
   ],
+  "zvz-infernalscythe": [
+    "https://i.imgur.com/XqHkV5v.jpg",
+    "https://albiononline.com/en/characterbuilder/solo-builds/view/104418",
+    "https://discord.com/channels/200746010102726657/807319001234407504/871107864045957150",
+  ],
 };
 const healList = {
   "zvz-occult": [
