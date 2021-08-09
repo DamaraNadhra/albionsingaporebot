@@ -20,8 +20,8 @@ module.exports = {
     let answer = Object.keys(faq).find((m) =>
       m.toLowerCase().includes(question.toLowerCase())
     );
-    const title = faqTitle(answer);
     if (answer !== undefined && answer !== "approvedScout") {
+      const title = faqTitle(answer);
       interaction.reply({
         content: `_Showing answer for <@${
           target ? target.id : interaction.user.id
