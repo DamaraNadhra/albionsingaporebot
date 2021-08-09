@@ -444,7 +444,7 @@ client.on("messageCreate", async (message) => {
           let embed = new MessageEmbed()
             .setAuthor(build.label, build.pic)
             .setColor("ORANGE")
-            .setImage(list[m][0])
+            .setImage(build.icon)
             .setDescription("You must reach at least 1100 IP");
           const embedDesc = new MessageEmbed()
             .setColor("ORANGE")
