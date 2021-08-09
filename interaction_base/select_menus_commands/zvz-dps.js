@@ -19,7 +19,7 @@ module.exports = {
       if (interaction.values.includes(m)) {
         const embed = new MessageEmbed()
           .setColor("ORANGE")
-          .setAuthor(zvzlist.dps[m].pic, zvzlist.dps[m].pic)
+          .setAuthor(zvzlist.dps[m].label, zvzlist.dps[m].pic)
           .setImage(zvzlist.dps[m].icon);
         const embedDesc = new MessageEmbed()
           .setColor("ORANGE")
