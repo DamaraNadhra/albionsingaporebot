@@ -49,6 +49,7 @@ for (const folder of commandFolders) {
   }
 }
 client.on("messageCreate", async (message) => {
+  // Auto checking application blacklist status
   if (message.channel.id === "752110992405692456") {
     if (
       message.content.toLowerCase().includes("my in-game name") ||
@@ -146,8 +147,8 @@ client.on("messageCreate", async (message) => {
           }
         });
     }
+    // Battle Checking from #battlebot
   } else if (message.channel.id === "779629935920152596") {
-    //battlechecking
     if (!message.embeds[0]) return;
     let value = message.embeds[0].fields[0].value;
     value = value.replace(")", "/");
@@ -156,6 +157,7 @@ client.on("messageCreate", async (message) => {
       .execute(message, client, value.split("/")[6]);
   }
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  // Auto trigger rep system whenever someone say thanks / thank you / thx
   if (
     message.content.toLowerCase().includes("thanks") |
     message.content.toLowerCase().includes("thank you") |
@@ -466,8 +468,6 @@ client.on("messageCreate", async (message) => {
               ),
             ],
           });
-        } else {
-          message.reply(`Please redo this command at ${botCommandChannel}`);
         }
       }
     });
