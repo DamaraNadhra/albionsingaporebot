@@ -19,7 +19,7 @@ module.exports = {
       .then(() =>
         message.channel.send({
           content: `> **2.** Type \`!register\` in the #register-here channel, **after you have joined our guild!**`,
-          files: ["https://i.imgur.com/9gsA1SO.png"],
+          files: ["https://i.imgur.com/WZOCnJi.png"],
         })
       )
       .then(() => {
