@@ -21,7 +21,9 @@ module.exports = {
       .setFooter("If this is wrong please contact the officers :D");
     if (
       (message.channel.id === "779514684797091850") |
-      (message.channel.id === "760731834354499585")
+      (message.channel.id === "760731834354499585") |
+      (message.channel.id === "856774244498407445") |
+      (message.channel.id === "866900635215724544")
     ) {
       let firstArgument = args[0];
       if (!firstArgument)
@@ -68,7 +70,9 @@ module.exports = {
           }
         });
     } else {
-      return message.channel.send(embedz);
+      return message.channel.send({
+        embeds: [embedz],
+      });
     }
   },
 };
