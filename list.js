@@ -459,9 +459,9 @@ const healRow = new MessageActionRow().addComponents(
 const zvzlist = {
   dps: {
     "zvz-glacial": {
-      label: "Siegebow",
+      label: "Glacial Staff",
       pic: "https://render.albiononline.com/v1/item/T8_2H_GLACIALSTAFF@1.png?quality=2",
-      icon: "https://i.imgur.com/NdNMTcj.jpg",
+      icon: "https://i.imgur.com/v84cEDw.jpg",
       link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101093",
       reference:
         "https://discord.com/channels/200746010102726657/807319001234407504/875870823276249088",
