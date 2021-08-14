@@ -285,7 +285,7 @@ client.on("messageCreate", async (message) => {
     message.channel.id !== "752110992405692456" &&
     message.channel.id !== "849121401390628914" &&
     message.channel.id !== "711887933266853950" &&
-    message.channel.id !== "864680889128583218"
+    message.channel.id !== "864680889128583218" &&
     !message.author.bot
   ) {
     var resp = sentiment.analyze(message.content.toLowerCase());
