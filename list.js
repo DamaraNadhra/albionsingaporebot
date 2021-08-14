@@ -243,6 +243,12 @@ const row = new MessageActionRow().addComponents(
     .setPlaceholder("ZvZ DPS builds")
     .addOptions([
       {
+        label: "Glacial Staff",
+        description: "Deadly DOT, unreflectable damage",
+        value: "zvz-glacial",
+        emoji: "<:glacialstaff:876062215382376478>",
+      },
+      {
         label: "Dual Swords",
         description: "Melee dps build, good for clumps",
         value: "zvz-dualswords",
@@ -452,6 +458,14 @@ const healRow = new MessageActionRow().addComponents(
 );
 const zvzlist = {
   dps: {
+    "zvz-glacial": {
+      label: "Siegebow",
+      pic: "https://render.albiononline.com/v1/item/T8_2H_GLACIALSTAFF@1.png?quality=2",
+      icon: "https://i.imgur.com/NdNMTcj.jpg",
+      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/101093",
+      reference:
+        "https://discord.com/channels/200746010102726657/807319001234407504/875870823276249088",
+    },
     "zvz-siegebow": {
       label: "Siegebow",
       pic: "https://render.albiononline.com/v1/item/T6_2H_CROSSBOWLARGE_MORGANA@1.png?quality=2",
