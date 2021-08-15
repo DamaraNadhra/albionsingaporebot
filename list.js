@@ -613,8 +613,7 @@ const zvzlist = {
     "zvz-infernalscythe": {
       label: "Infernal Scythe",
       pic: "https://render.albiononline.com/v1/item/T6_2H_SCYTHE_HELL@2.png?quality=2",
-      icon: "https://i.imgur.com/XqHkV5v.jpg",
-      link: "https://albiononline.com/en/characterbuilder/solo-builds/view/104418",
+      icon: "https://i.imgur.com/STaSIf4.jpg",
       reference:
         "https://discord.com/channels/200746010102726657/807319001234407504/871107864045957150",
     },
