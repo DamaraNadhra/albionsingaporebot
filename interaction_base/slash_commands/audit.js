@@ -48,7 +48,11 @@ module.exports = {
             case "CHANNEL_UPDATE":
               changesString = `Changed from ${elementChanges[0].old} to ${elementChanges[0].new}`;
               break;
+            case "MEMBER_BAN_ADD":
+              changesString = `null`;
+              break;
             default:
+              changesString = `null`;
               break;
           }
           return `#showing audit log entry: ${element.id}\nExecutor = '${element.executor.tag}' \nTarget = '${element.target.tag}' \nType = '${element.action}' \nChanges = '${changesString}'`;
