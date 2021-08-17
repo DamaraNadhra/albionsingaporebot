@@ -462,6 +462,36 @@ const compareSet = (mainHand, offHand, head, armor, shoes) => {
     "ARMOR_CLOTH_SET2",
     "SHOES_CLOTH_ROYAL",
   ];
+  let infernalscythe = [
+    "2H_SCYTHE_HELL",
+    "HEAD_CLOTH_SET1",
+    "ARMOR_LEATHER_HELL",
+    "SHOES_CLOTH_SET1",
+  ];
+  let infernalscythe2 = [
+    "2H_SCYTHE_HELL",
+    "HEAD_CLOTH_SET1",
+    "ARMOR_LEATHER_UNDEAD",
+    "SHOES_CLOTH_SET1",
+  ];
+  let infernalscythe3 = [
+    "2H_SCYTHE_HELL",
+    "HEAD_CLOTH_SET1",
+    "ARMOR_PLATE_SET1",
+    "SHOES_CLOTH_SET1",
+  ];
+  let glacial = [
+    "2H_GLACIALSTAFF",
+    "HEAD_LEATHER_SET3",
+    "ARMOR_CLOTH_SET1",
+    "SHOES_CLOTH_SET1",
+  ];
+  let glacial2 = [
+    "2H_GLACIALSTAFF",
+    "HEAD_PLATE_SET2",
+    "ARMOR_CLOTH_SET2",
+    "SHOES_CLOTH_SET1",
+  ];
   let weapon = mainHand.Type.toString();
   if (offHand == null) {
     if (weapon.includes(avaHammerTank[0])) {
@@ -638,6 +668,20 @@ const compareSet = (mainHand, offHand, head, armor, shoes) => {
       if (
         (sets(mainHand, offHand, head, armor, shoes, cursedSkull) == false) |
         (sets(mainHand, offHand, head, armor, shoes, cursedSkull2) == false)
+      )
+        return true;
+    } else if (weapon.includes(infernalscythe[0])) {
+      if (
+        (sets(mainHand, offHand, head, armor, shoes, infernalscythe) == false) |
+        (sets(mainHand, offHand, head, armor, shoes, infernalscythe2) ==
+          false) |
+        (sets(mainHand, offHand, head, armor, shoes, infernalscythe3) == false)
+      )
+        return true;
+    } else if (weapon.includes(glacial[0])) {
+      if (
+        (sets(mainHand, offHand, head, armor, shoes, glacial) == false) |
+        (sets(mainHand, offHand, head, armor, shoes, glacial2) == false)
       )
         return true;
     } else {
