@@ -38,7 +38,7 @@ module.exports = {
     }
     interaction.user.send({
       content: `Permission Given!, Please post your application at ${botCommandChannel} \nPlease refer to ${welcomeChannel} for application instruction! \n\nPlease remember that **after you have joined the guild** you **MUST** register in ARCH Main Discord by typing \`!register\` in #register-here. If we found out that you were not registered, we will kick you :D`,
-      files: ["https://i.imgur.com/9gsA1SO.png"],
+      files: ["https://i.imgur.com/WZOCnJi.png"],
     });
 
     interaction.update({
