@@ -8,6 +8,12 @@ const {
 module.exports = {
   name: "register",
   description: "REGISTER button from register application",
+  /**
+   *
+   * @param {Interaction} interaction
+   * @param {*} client
+   * @returns
+   */
   async execute(interaction, client) {
     const registerButton = new MessageButton()
       .setCustomId("register")
@@ -36,7 +42,8 @@ module.exports = {
         ephemeral: true,
       });
     }
-    interaction.user.send({
+    let channel = await interaction.user.createDM({ force: true });
+    channel.send({
       content: `Permission Given!, Please post your application at ${botCommandChannel} \nPlease refer to ${welcomeChannel} for application instruction! \n\nPlease remember that **after you have joined the guild** you **MUST** register in ARCH Main Discord by typing \`!register\` in #register-here. If we found out that you were not registered, we will kick you :D`,
       files: ["https://i.imgur.com/WZOCnJi.png"],
     });
