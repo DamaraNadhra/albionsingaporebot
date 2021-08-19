@@ -8,7 +8,11 @@ module.exports = {
       (interaction.channelID === "752110992405692456")
     )
       return;
-    const logChannel =
+    interaction.reply({
+      content: "This command is locked for the time being :D",
+      ephemeral: true,
+    });
+    /*const logChannel =
       interaction.guild.channels.cache.get("864669032811331584");
     const { user } = interaction.options.get("user");
     if (user.id === interaction.member.id)
@@ -64,5 +68,6 @@ module.exports = {
         interaction.channelID
       }> at ${dateMaker(new Date())}`,
     });
+    */
   },
 };

@@ -158,7 +158,7 @@ client.on("messageCreate", async (message) => {
   }
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   // Auto trigger rep system whenever someone say thanks / thank you / thx
-  if (
+  /*if (
     message.content.toLowerCase().includes("thanks") |
     message.content.toLowerCase().includes("thank you") |
     message.content.toLowerCase().includes("thx")
@@ -277,7 +277,7 @@ client.on("messageCreate", async (message) => {
         ],
       });
     }
-  }
+  }*/
   const RNG = Math.floor(Math.random() * 22);
   if (
     RNG === 12 &&
@@ -336,66 +336,6 @@ client.on("messageCreate", async (message) => {
   try {
     commands.execute(message, args, client);
   } catch (error) {}
-  if (command === "fastcheck") {
-    const eventId = args[0];
-    if (!eventId) return message.reply("Please state the event Id");
-    axios
-      .get(`https://gameinfo.albiononline.com/api/gameinfo/events/${eventId}`)
-      .then(async (result) => {
-        let event = result.data;
-        const embed = new MessageEmbed()
-          .setAuthor("Killboard Info", client.user.displayAvatarURL())
-          .setColor("BLUE")
-          .setDescription(
-            `List to fast check killboard \n[Killboard link](https://albiononline.com/en/killboard/kill/${eventId}) \n**Deathfame:** ${
-              parseInt(event.TotalVictimKillFame) / 1000
-            }`
-          )
-          .addFields(
-            {
-              name: "__**Victim**__",
-              value: `**Name:** ${
-                event.Victim.Name
-              } \n**Average IP:** ${Math.round(
-                event.Victim.AverageItemPower
-              )} \n**Guild:** ${event.Victim.GuildName} \n**Aliance:** ${
-                event.Victim.AllianceName
-              }`,
-              inline: true,
-            },
-            {
-              name: "__**Killer**__",
-              value: `**Name:** ${
-                event.Killer.Name
-              } \n**Average IP:** ${Math.round(
-                event.Killer.AverageItemPower
-              )} \n**Guild:** ${event.Killer.GuildName} \n**Alliance:** ${
-                event.Killer.AllianceName
-              }`,
-              inline: true,
-            }
-          )
-          .setFooter("Singapore on top", client.user.displayAvatarURL())
-          .setTimestamp(new Date());
-        message.channel.send(embed);
-        console.log(event);
-      })
-      .catch((e) => {
-        message.channel.send("Cannot find a killboard with that id");
-      });
-  } else if (command === "deletecommand") {
-    if (message.member.permissions.has("ADMINISTRATOR")) {
-      if (!args[0]) return message.reply("Please state the command name");
-      let commandList = await client.application?.commands.fetch();
-      console.log(await client.application?.commands.fetch());
-      if (commandList) {
-        await client.application?.commands.delete(args[0]);
-        message.reply(`Command \`${args[0]}\` has been deleted`);
-      } else {
-        message.reply(`I couldn't find a command with \`${args[0]}\` name`);
-      }
-    }
-  }
   Object.keys(avalist).forEach((m, i) => {
     if (command.includes(m)) {
       let botCommandChannel =

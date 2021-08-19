@@ -4,7 +4,17 @@ module.exports = {
   name: "rep",
   description: "check someone's reputation!",
   async execute(message, args, client) {
-    if (message.channel.id === "722753194496753745") return;
+    message
+      .reply({
+        content: "This command is locked for the time being :D",
+        ephemeral: true,
+      })
+      .then(async (msg) => {
+        setTimeout(() => {
+          msg.delete();
+        }, 3000);
+      });
+    /*if (message.channel.id === "722753194496753745") return;
     let firstArgument = args[0];
     let argument = args.slice(0).join(" ");
     let isPersonHasReputation;
@@ -85,6 +95,6 @@ module.exports = {
           content: `**${isPersonHasReputation.name}**: ${isPersonHasReputation.rep} **Rep** (**${rank}**)`,
         });
       }
-    }
+    }*/
   },
 };

@@ -15,7 +15,11 @@ module.exports = {
       (interaction.channelID === "752110992405692456")
     )
       return;
-    let isPersonHasReputation;
+    interaction.reply({
+      content: "This command is locked for the time being :D",
+      ephemeral: true,
+    });
+    /*let isPersonHasReputation;
     const blabla = interaction.options.get("user");
     if (interaction.options.get("user")) {
       const { user } = interaction.options.get("user");
@@ -84,6 +88,6 @@ module.exports = {
           content: `**${isPersonHasReputation.name}**: ${isPersonHasReputation.rep} **Rep** (**${rank}**)`,
         });
       }
-    }
+    }*/
   },
 };

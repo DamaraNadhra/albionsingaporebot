@@ -1,7 +1,12 @@
 const rep = require("../models/reputation");
 const { nicknameMaker, dateMaker } = require("../util");
 let { recentlyRan } = require("../cooldown");
-const { MessageButton, MessageEmbed, MessageActionRow } = require("discord.js");
+const {
+  MessageButton,
+  MessageEmbed,
+  MessageActionRow,
+  Message,
+} = require("discord.js");
 let repLogButton = new MessageButton()
   .setStyle("LINK")
   .setLabel("Message Link");
@@ -9,9 +14,26 @@ module.exports = {
   name: "giverep",
   description: "gives reputation to provided player!",
   aliases: ["+rep", "reputation"],
+  /**
+   *
+   * @param {Message} message
+   * @param {*} args
+   * @param {*} client
+   * @returns
+   */
   async execute(message, args, client) {
     if (message.channel.id === "722753194496753745") return;
-    if (recentlyRan.includes(message.author.id)) {
+    message
+      .reply({
+        content: "This command is locked for the time being :D",
+        ephemeral: true,
+      })
+      .then((msg) => {
+        setTimeout(() => {
+          msg.delete();
+        }, 3000);
+      });
+    /*if (recentlyRan.includes(message.author.id)) {
       let cooldownMessage = await message.reply("This command is on cooldown");
       setTimeout(() => {
         cooldownMessage.delete();
@@ -235,6 +257,6 @@ module.exports = {
           ),
         ],
       });
-    }
+    }*/
   },
 };

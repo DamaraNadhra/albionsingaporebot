@@ -3,7 +3,17 @@ module.exports = {
   name: "leaderboard",
   description: "shows top 15 of all reputations",
   async execute(message, args, client) {
-    if (
+    message
+      .reply({
+        content: "This command is locked for the time being :D",
+        ephemeral: true,
+      })
+      .then((msg) =>
+        setTimeout(() => {
+          msg.delete();
+        }, 3000)
+      );
+    /*if (
       (message.channel.id === "864389467975974943") |
       message.member.permissions.has("MANAGE_MESSAGES")
     ) {
@@ -37,6 +47,6 @@ module.exports = {
         embeds: [embed],
         components: [new MessageActionRow().addComponents(thisbutton)],
       });
-    }
+    }*/
   },
 };
