@@ -279,6 +279,7 @@ client.on("messageCreate", async (message) => {
     }
   }*/
   const RNG = Math.floor(Math.random() * 22);
+  var z = 0;
   if (
     RNG === 12 &&
     message.content.length > 30 &&
@@ -288,12 +289,12 @@ client.on("messageCreate", async (message) => {
     message.channel.id !== "864680889128583218" &&
     !message.author.bot
   ) {
+    if (z === negativeResponses.length) z = 0;
     var resp = sentiment.analyze(message.content.toLowerCase());
 
     console.log(resp.score);
     if (resp.score < 0) {
-      const response =
-        negativeResponses[Math.floor(Math.random() * negativeResponses.length)];
+      const response = negativeResponses[z];
       message.channel.send({
         content: `<@${message.author.id}>, ${response}`,
       });
@@ -304,6 +305,7 @@ client.on("messageCreate", async (message) => {
         content: `<@${message.author.id}>, ${response}`,
       });
     }
+    z++;
   } else if (message.cleanContent.toLowerCase().includes("stupid bot")) {
     message.reply(
       "You think I'm stupid???? okay fine dont u ever use my command ever again!!"
