@@ -379,6 +379,7 @@ client.on("messageCreate", async (message) => {
   });
   Object.keys(zvzlist).forEach((m, i) => {
     Object.keys(zvzlist[m]).forEach((element, index) => {
+      if (!command.startsWith("zvz-")) return;
       if (element.includes(command)) {
         const build = zvzlist[m][element];
         let botCommandChannel =
