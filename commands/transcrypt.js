@@ -1,5 +1,4 @@
 const { Message, Client, MessageAttachment } = require("discord.js");
-const collect = require("collect.js");
 module.exports = {
   name: "copychannel",
   description: "Copy all the messages inside that channel",
