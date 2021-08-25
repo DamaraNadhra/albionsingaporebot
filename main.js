@@ -15,6 +15,7 @@ const {
   negativeResponses,
   positiveResponses,
 } = require("./list");
+var z = 1;
 const report = require("./models/report");
 const axios = require("axios");
 const prefix = "!";
@@ -279,7 +280,6 @@ client.on("messageCreate", async (message) => {
     }
   }*/
   const RNG = Math.floor(Math.random() * 22);
-  var z = 0;
   if (
     RNG === 12 &&
     message.content.length > 30 &&
